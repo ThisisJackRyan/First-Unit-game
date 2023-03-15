@@ -8,6 +8,9 @@ public class firePlayerGun : MonoBehaviour
 
     public GameObject gun;
     public GameObject Laser;
+    
+    public Transform barrelLocation;
+    public float shootPoower;
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class firePlayerGun : MonoBehaviour
 
     public void spawnLaser()
     {
-         Instantiate(Laser, transform.position, Laser.transform.rotation);
+        
+        Instantiate(Laser, barrelLocation.position, barrelLocation.rotation * Quaternion.Euler(90f,0f,0f)).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shootPoower);
     }
 }
