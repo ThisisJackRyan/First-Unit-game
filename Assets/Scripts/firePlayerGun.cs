@@ -6,7 +6,8 @@ public class firePlayerGun : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    GameObject gun;
+    public GameObject gun;
+    public GameObject Laser;
 
     void Start()
     {
@@ -20,8 +21,8 @@ public class firePlayerGun : MonoBehaviour
     }
 
 
-    void spawnLaser()
+    public void spawnLaser()
     {
-        
+         Instantiate(Laser, transform.position, Laser.transform.rotation);
     }
 }
