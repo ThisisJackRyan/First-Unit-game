@@ -6,6 +6,7 @@ public class DetectCollisions : MonoBehaviour
 {
 
     SpawnManager spawn;
+    GameObject f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,10 @@ public class DetectCollisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          
+          if(GameObject.FindGameObjectsWithTag("Target").Length > 1){
+                f = GameObject.FindGameObjectWithTag("Target");
+                Destroy(f);
+          }
     }
 
     void OnTriggerEnter(Collider other)
